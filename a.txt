@@ -1,0 +1,18 @@
+
+        detailed_patients[patno] = {
+            **card,
+            "primary_graph": {
+                "feature": primary_feature,
+                "points": primary_graph
+            },
+            "multi_feature_graph": _build_multi_feature_graph(
+                patient_log
+            ),
+            "visit_table": _build_visit_table(
+                patient_log
+            ),
+            "dpvi_metrics": {
+                "dpvi_score": _safe_round(dpvi_score, 4),
+                "available_dpvi_features": len(dpvi_cols),
+            }
+        }
